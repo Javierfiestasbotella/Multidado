@@ -1,3 +1,4 @@
+
 from random import randint, uniform,random
 import random
 from colorama import init, Fore, Back, Style
@@ -10,7 +11,7 @@ empezar=""
 while empezar!="salir":
   empezar=input("Elige que quieres hacer: jugar/salir: ")
   if empezar=="jugar":
-    tipo_dado=input("¿qué tipo de dado quieres: numeros,colores o retos?: ")
+    tipo_dado=input("¿qué tipo de dado quieres: numeros,colores ,retos o imitar?: ")
     if tipo_dado=="numeros":
       numero_caras=int(input("¿Cuántas caras quieres que tenga el dado?: "))
       tirar_dado=input("¿Quieres tirar el dado? ")
@@ -62,4 +63,20 @@ while empezar!="salir":
           print ("no reconozco esa respuesta")
           tirar_retos=input("¿Quieres tirar el dado de los retos? ")
 
-print("Se acabo el juego. Muchas gracias por utilizar el Multidado creado por Javier Fiestas Botella") 
+    elif tipo_dado=="imitar":
+      lista_imitacion=["mono","mejillón","Mariano Rajoi","tigre","tortuga","gallina","elefante","doraemon","elefante","camarero","papa-noel","Rafa Nadal","hormiga","cocinero","oso","rana","cabra","profesor","barrendero"]
+      
+      imitar_cosas=input("¿quieres tirar el dado? " )
+      while imitar_cosas!="no":
+        if imitar_cosas=="si":
+        
+         print(Fore.GREEN+str(random.choice(lista_imitacion)))
+         imitar_cosas=input(Fore.WHITE+"¿quieres tirar el dado?" )
+        else:
+          print ("no reconozco esa respuesta")
+          imitar_cosas=input(Fore.WHITE+"¿Quieres tirar el dado: ")
+
+      
+
+
+print("Se acabo el juego. Muchas gracias por utilizar el Multidado creado por: "+Fore.BLUE+" Javier Fiestas Botella") 
